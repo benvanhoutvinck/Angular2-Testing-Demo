@@ -1,0 +1,19 @@
+<h1>Github users</h1>
+
+<!--<h3>Repo list</h3>
+<ul class="users">
+  <li *ngFor="let user of users">
+
+    {{ user.id }}
+
+    <img src="{{user.avatar_url}}" width="50" height="50"/>
+
+  </li>
+</ul>-->
+
+<div class="grid grid-pad">
+  <github-user *ngFor="let user of users"  class="col-1-4"
+                  [user]=user  (selected)="gotoDetail($event)" >
+  </github-user>
+</div>
+
