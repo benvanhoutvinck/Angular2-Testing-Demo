@@ -464,10 +464,6 @@ Most of the time, you can find your elements by:
 - Binding.
 
 
-- Worksheet gedeeltelijk gemaakt en dan weggaan checken of deze is aangemaakt
-- Service -> dealer met contract tbr -> vehicle kiezen en layoutconfirm == false -> dan moet confirm pagina weergegeven worden.
-
-
 
 
 
