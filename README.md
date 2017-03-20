@@ -4,7 +4,7 @@
 2. They **clarify** what the code does both when used as intended and when faced with deviant conditions.
 3. They **reveal** mistakes in design and implementation. Tests shine a harsh light on the code from many angles. When a part of the application seems hard to test, the root cause is often a design flaw, something to cure now rather than later when it becomes expensive to fix.
 
-###Tools and Technologies###
+### Tools and Technologies ###
 - **Jasmine**: The Jasmine test framework. provides everything needed to write basic tests. It ships with an HTML test runner that executes tests in the browser.
 - **Angular Testing Utilities**: The Angular testing utilities create a test environment for the Angular application code under test. Use them to condition and control parts of the application as they interact within the Angular environment.
 - **Karma**: The karma test runner is ideal for writing and running unit tests while developing the application. It can be an integral part of the project's development and continuous integration processes. This chapter describes how to setup and run tests with karma.
