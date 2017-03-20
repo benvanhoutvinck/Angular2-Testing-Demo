@@ -54,7 +54,7 @@ The top of the screen displays application title, presented by the ToolbarCompon
 The corresponding toolbar.component.spec.ts file sits in the same folder as the component. BannerComponent has a template url and an interpolation binding. The component is probably too simple to be worth testing in real life but it's perfect for a first encounter with the TestBed.
 
 Start with ES6 import statements to get access to symbols referenced in the spec.
-
+`
     // angular
     import {Component, DebugElement} from '@angular/core';
     import {TestBed, ComponentFixture, async} from '@angular/core/testing';
@@ -64,7 +64,7 @@ Start with ES6 import statements to get access to symbols referenced in the spec
     import {t} from '../../../test/index';
     import { TEST_CORE_PROVIDERS } from '../../../core/testing/index';
     import {ToolbarComponent} from './toolbar.component';
-
+`
 
 
 - **t**: is provided by the seed advanced and is purely a convenience class, providing shorthand notations for a collection of Jasmine functions.
