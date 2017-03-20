@@ -122,7 +122,7 @@ The fixture returned by createComponent holds an instance of TestComponent inste
 
 Of course creating the TestComponent has the side-effect of creating a ToolbarComponent because the latter appears within the template of the former. The query for the h1 element still finds it in the test DOM albeit at greater depth in the element tree than before.
 
-####ComponentFixture, DebugElement, and query(By.css)####
+#### ComponentFixture, DebugElement, and query(By.css) ####
 
 The `createComponent` method returns a `ComponentFixture`, a handle on the test environment surrounding the created component. The fixture provides access to the component instance itself and to the `DebugElement` which is a handle on the component's DOM element.
 
@@ -278,7 +278,7 @@ In general, tests should not make calls to remote servers. They should emulate s
       
     });
 
-####Spying on the real service####
+#### Spying on the real service ####
 This setup is similar to the `welcome.component.spec` setup. But instead of creating a stubbed service object, it injects the real service (see the testing module `providers`) and replaces the critical getUsers method with a Jasmine spy.
 
     // Setup spy on the `getUsers` method
@@ -286,7 +286,7 @@ This setup is similar to the `welcome.component.spec` setup. But instead of crea
 
 The spy is designed such that any call to `getUsers` receives an immediately resolved promise with test users. The spy bypasses the actual getUsers method and therefore will not contact the server.
 
-####The Tests####
+#### The Tests ####
      it('should not show users before OnInit', () => {
       expect(el.children.length).toBe(0,'no users displayed yet');
       expect(spy.calls.any()).toBe(false, 'getUsers not yet called');
@@ -314,14 +314,14 @@ The spy is designed such that any call to `getUsers` receives an immediately res
       expect(el.children.length).toBe(3,'3 users displayed');
     }));
 
-####Synchronous tests####
+#### Synchronous tests ####
 The first two tests are synchronous. Thanks to the spy, they verify that `getUsers` is called after the first change detection cycle during which Angular calls `ngOnInit`.
 
 Neither test can prove that a value from the service is being displayed. The users themself have not arrived, despite the fact that the spy returns a resolved promise.
 
 This test must wait at least one full turn of the JavaScript engine before the value becomes available. The test must become asynchronous.
 
-####The async function in *it*####
+#### The async function in *it* ####
     it('should show users after getUsers promise (async)', async(() => {
 	      fixture.detectChanges();
 	      fixture.whenStable().then(() => { // wait for async getUsers
@@ -337,7 +337,7 @@ The body of the async argument looks much like the body of a normal it argument.
 
 Some functions called within a test (such as fixture.whenStable) continue to reveal their asynchronous behavior.
 
-####whenStable####
+#### whenStable ####
 The test must wait for the getUsers Observable to resolve in the next turn of the JavaScript engine.
 
 This test has no direct access to the observable returned by the call to `githubService.getUsers` which is private and inaccessible inside `GithubComponent`.
@@ -361,7 +361,7 @@ The `DashboardHeroComponent` is embedded in the `DashboardComponent` template li
     	[hero]=hero  (selected)="gotoDetail($event)" >
       </dashboard-hero>
 
-###Test a routed component###
+### Test a routed component ###
 
 Testing the actual `GithubComponent` seems daunting because it injects the Router. As a rule you test the component, not the router, and care only if the component navigates with the right address under the given conditions. Stubbing the router with a test implementation is an easy option. This should do the trick:
 
@@ -401,7 +401,7 @@ The following test clicks the displayed user and confirms (with the help of a sp
       'should nav to UserDetail for first user');
       }));
 
-####The *inject* function####
+#### The *inject* function ####
 Notice the *inject* function in the second it argument:
 
      it('should tell ROUTER to navigate when user clicked',
@@ -443,17 +443,17 @@ By now you know how to stub the Router and a data service. Stubbing the Activate
 
 
 
-##e2e testing with protractor##
+## e2e testing with protractor ##
 - npm install webdriver-manager <- Install this first for e2e testing
 - npm run webdriver-update <- You will need to run this the first time
 - *bugfix* in package.json, change the line `"webdriver-start": "node_modules/protractor/bin/webdriver-manager start"` to `"webdriver-start": "node ./node_modules/protractor/bin/webdriver-manager start"`
-#####In three different shell windows:#####
+##### In three different shell windows: #####
 - npm run webdriver-start
 - npm run serve.e2e
 - npm run e2e
 
 
-##Locators##
+## Locators ##
 One if not the most important thing in E2E testing is finding the elements that you want to test in your view. You have many ways to do this. Most of them depend of your application. In order to get your elements, you will use a range of **Locators**.
 
 Most of the time, you can find your elements by:
