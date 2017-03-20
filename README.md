@@ -84,7 +84,7 @@ Start with ES6 import statements to get access to symbols referenced in the spec
 
 
 
-###Test a component inside a test host component###
+### Test a component inside a test host component ###
 
 Since the ToolbarComponent is nested within the AppComponent we need a parenet component to be able to run the tests. Testing with the actual parent component is doable but seems more trouble than its worth. It's easier to emulate the AppComponent host with a test host like this one:
 
@@ -134,7 +134,7 @@ The `By` class is an Angular testing utility that produces useful predicates. It
 
 Finally, the setup assigns the DOM element from the DebugElement nativeElement property to el. The tests will assert that el contains the expected title text.
 
-####The tests####
+#### The tests ####
 > Jasmine runs the beforeEach function before each of these tests
 
       t.it('should display original title', () => {
@@ -148,12 +148,12 @@ Finally, the setup assigns the DOM element from the DebugElement nativeElement p
       t.e(el.textContent).toContain('testtitle');
     })
 
-####detectChanges: Angular change detection within a test####
+#### detectChanges: Angular change detection within a test ####
 Each test tells Angular when to perform change detection by calling `fixture.detectChanges()`. The first test does so immediately, triggering data binding and propagation of the title property to the DOM element.
 
 The second test changes the component's title property and only then calls fixture.detectChanges(); the new value appears in the DOM element.
 
-###Test a component with a dependency###
+### Test a component with a dependency ###
 Components often have service dependencies. The `WelcomeComponent` displays a welcome message to the logged in user. It knows who the user is based on a property of the injected UserService:
 
     @BaseComponent({
@@ -184,7 +184,7 @@ The `WelcomeComponent` has decision logic that interacts with the service, logic
       })
 This time, in addition to declaring the component-under-test, the configuration adds a UserService provider to the providers list. But not the real UserService.
 
-####Provide service test doubles####
+#### Provide service test doubles ####
 Injecting the real `UserService` could be a nightmare. The real service might try to ask the user for login credentials and try to reach an authentication server. These behaviors could be hard to intercept. It is far easier and safer to create and register a test double in place of the real `UserService`.
 
 This particular test suite supplies a minimal UserService stub that satisfies the needs of the WelcomeComponent and its tests:
@@ -192,7 +192,7 @@ This particular test suite supplies a minimal UserService stub that satisfies th
       isLoggedIn: boolean;
       user: { name: string}
     };
-####Get injected services####
+#### Get injected services ####
 The tests need access to the (stub) `UserService` injected into the `WelcomeComponent`.
 
 Angular has a hierarchical injection system. There can be injectors at multiple levels, from the root injector created by the `TestBed` down through the component tree.
