@@ -84,7 +84,7 @@ Start with ES6 import statements to get access to symbols referenced in the spec
 
 
 
-####Test a component inside a test host component####
+###Test a component inside a test host component###
 
 Since the ToolbarComponent is nested within the AppComponent we need a parenet component to be able to run the tests. Testing with the actual parent component is doable but seems more trouble than its worth. It's easier to emulate the AppComponent host with a test host like this one:
 
