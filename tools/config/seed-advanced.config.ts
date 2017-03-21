@@ -65,10 +65,10 @@ export class SeedAdvancedConfig extends SeedConfig {
     };
 
       this.SYSTEM_CONFIG['packages']['angulartics2'] = {
-      main: 'dist/index.js',
+      main: 'index.js',
       defaultExtension: 'js'
     };
-    this.SYSTEM_CONFIG['packages']['angulartics2/dist/providers'] = {
+    this.SYSTEM_CONFIG['packages']['angulartics2/src/providers'] = {
       main: 'index.js',
       defaultExtension: 'js'
     };
@@ -100,10 +100,10 @@ export class SeedAdvancedConfig extends SeedConfig {
       defaultExtension: 'js'
     };
      this.SYSTEM_BUILDER_CONFIG['packages']['angulartics2'] = {
-      main: 'dist/index.js',
+      main: 'index.js',
       defaultExtension: 'js'
     };
-    this.SYSTEM_BUILDER_CONFIG['packages']['angulartics2/dist/providers'] = {
+    this.SYSTEM_BUILDER_CONFIG['packages']['angulartics2/src/providers'] = {
       main: 'index.js',
       defaultExtension: 'js'
     };
