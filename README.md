@@ -348,7 +348,7 @@ The ComponentFixture.whenStable method returns its own promise which resolves wh
 
 Then the test resumes and kicks off another round of change detection (fixture.detectChanges) which tells Angular to update the DOM with the quote. The getQuote helper method extracts the display element text and the expectation confirms that the text matches the test quote.
 
-###Test a component with inputs and outputs###
+### Test a component with inputs and outputs ###
 A component with inputs and outputs typically appears inside the view template of a host component. The host uses a property binding to set the input property and uses an event binding to listen to events raised by the output property.
 
 The testing goal is to verify that such bindings work as expected. The tests should set input values and listen for output events.
