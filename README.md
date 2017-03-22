@@ -444,7 +444,7 @@ By now you know how to stub the Router and a data service. Stubbing the Activate
 
 
 ## e2e testing with protractor ##
-- npm install webdriver-manager <- Install this first for e2e testing
+- npm install -g webdriver-manager <- Install this first for e2e testing
 - npm start webdriver-update <- You will need to run this the first time
 - *bugfix* in package.json, change the line `"webdriver-start": "node_modules/protractor/bin/webdriver-manager start"` to `"webdriver-start": "node ./node_modules/protractor/bin/webdriver-manager start"`
 ##### In three different shell windows: #####
